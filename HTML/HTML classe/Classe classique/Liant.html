@@ -9,7 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../../../CSS/css extender/Classe jdr CSS/fiches-responsive.css">
 </head>
-<body>
+<body class="termion-classic-v2">
+    <div class="tv-ambient" aria-hidden="true"></div>
     <div class="parchment-overlay"></div>
     
     <!-- Bouton retour -->
@@ -21,15 +22,32 @@
             <img src="../../../Image/Liant.jpg" alt="Liant">
         </div>
         <div class="hero-content">
+            <p class="tv-kicker">✦ ARCHIVES TERMION · CLASSE CLASSIQUE</p>
             <h1 class="class-title">🐾 Liant</h1>
+            <div class="tv-seal" aria-hidden="true"><span>❖</span></div>
             <p class="class-quote">« On reconnaît un Liant à sa manière de marcher : jamais vraiment seul, toujours accompagné d'un silence partagé. »</p>
             <p class="class-type">🐾 Magie de Liance • Appels • Évocations • Aspects</p>
+            <div class="tv-disciplines">LIENS • ALLIANCES • EMPREINTES</div>
         </div>
     </header>
+    <nav class="tv-nav" aria-label="Navigation de la classe">
+        <a href="#termion-section-1">Présentation</a>
+        <a href="#termion-section-2">Statistiques</a>
+        <a href="#termion-section-3">Talents</a>
+        <a href="#termion-section-4">Règles</a>
+        <a href="#termion-section-5">Passif</a>
+        <a href="#termion-section-6">Origines</a>
+        <a href="#termion-section-7">Connaissances</a>
+        <a href="#termion-section-8">Armes</a>
+        <a href="#termion-section-9">Équipement</a>
+        <a href="#termion-section-10">Compétences</a>
+    </nav>
+
 
     <main class="container">
         <!-- Description -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-1">
+            <p class="tv-eyebrow">Livre 01 · Chroniques</p>
             <h2 class="section-title">📜 Présentation</h2>
             <div class="content-box">
                 <p>Profondément connectés au vivant, les Liants perçoivent et absorbent les énergies naturelles sans les contrôler directement. Leur corps et leur noyau magique servent de canal : ils conservent cette énergie et la restituent en modifications physiques temporaires, manifestations rapides ou matérialisations animales.</p>
@@ -39,7 +57,8 @@
         </section>
 
         <!-- Statistiques de base -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-2">
+            <p class="tv-eyebrow">Livre 02 · Essence & attributs</p>
             <h2 class="section-title">📊 Statistiques de base</h2>
             <div class="stats-grid">
                 <div class="stat-category">
@@ -92,13 +111,15 @@
         </section>
 
         <!-- Talents de classe -->
-        <section class="section"><h2 class="section-title">🎓 Talents</h2>
+        <section class="section reveal-section" id="termion-section-3"><p class="tv-eyebrow">Livre 03 · Dons & maîtrises</p>
+            <h2 class="section-title">🎓 Talents</h2>
             <div class="talent-card"><h3>Liance Primale</h3><p>Crée un Lien de Liant avec un animal qui a développé une réelle confiance envers toi. L’<strong>Accord de Liance</strong> se réalise hors combat en environ <strong>10 minutes</strong>. Au niveau 1 : <strong>2 Liens maximum</strong>. Chaque Lien conserve l’animal, ses principaux traits naturels et une Nature élémentaire issue de ta Source.<br>Les facultés utilisent cette empreinte en <strong>Appel, Évocation ou Aspect</strong>. Une Évocation est une reconstruction magique : elle ne téléporte pas l’animal réel, ne partage pas ses blessures et utilise les valeurs de tes facultés.</p></div>
             <div class="talent-card"><h3>Maîtrise mineure naturelle — Magie de Liance</h3><p>Style magique fondé sur la résonance des essences du Liant et de ses animaux liés. Permet d’Évoquer une manifestation élémentaire, d’emprunter temporairement un trait naturel par un Aspect ou d’effectuer un Appel bref. <strong>Magie de Liance +2 (SAG)</strong>.</p></div>
             <div class="talent-card"><h3>Ami des Bêtes — mineur</h3><p>Interprète posture, tension, intention, peur et curiosité des animaux pour faciliter une approche sûre, la confiance et la coopération simple. <strong>Communication animale +2 (CHA/SAG)</strong>.</p></div>
             <div class="talent-card"><h3>Dresseur de Concorde — mineur</h3><p>Privilégie confiance et habitudes plutôt que domination. <strong>Dressage +2 (CHA)</strong>. Les jets de Dressage sur un animal déjà lié bénéficient d’<strong>Avantage</strong>. Le Lien ne force jamais un animal à agir totalement contre son instinct ou sa relation avec toi.</p></div>
         </section>
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-4">
+            <p class="tv-eyebrow">Livre 04 · Codex</p>
             <h2 class="section-title">🐾 Règles des Liens — Niveau 1</h2>
             <div class="content-box">
                 <p>Les Liens de base concernent uniquement les <strong>animaux naturels capables de développer une relation</strong>. Ne sont pas compatibles : Élémentaires, Démons, Abyssaux, créatures maudites, morts-vivants, constructions artificielles, créatures uniques ou d’intelligence comparable aux peuples civilisés. Certaines Origines, Voies ou Évolutions peuvent dépasser ces limites.</p>
@@ -125,11 +146,13 @@
                 <p>À emplacements pleins, libère un ancien Lien avant d’en créer un nouveau. Rompre un Lien supprime seulement l’empreinte magique, jamais la relation avec l’animal.</p>
             </div>
         </section>
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-5">
+            <p class="tv-eyebrow">Livre 05 · Pouvoir intérieur</p>
             <h2 class="section-title">✦ Passif — Empreintes de Liance</h2>
             <div class="passif-box"><p>Au niveau 1 : <strong>2 emplacements d’Empreinte magique</strong>. Chaque Lien actif en occupe un et permet les Appels, Évocations et Aspects de son empreinte. Rompre volontairement un Lien libère son emplacement ; un nouvel Accord peut ensuite enregistrer une autre empreinte. Certains talents, évolutions ou effets de classe pourront augmenter cette limite.</p></div>
         </section>
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-6">
+            <p class="tv-eyebrow">Livre 06 · Destins</p>
             <h2 class="section-title">🐾 Origines de classe — 1 au choix</h2>
             <div class="origin-grid">
                 <div class="origin-card depart-a">
@@ -165,7 +188,8 @@
         </section>
 
         <!-- Connaissances -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-7">
+            <p class="tv-eyebrow">Livre 07 · Savoirs</p>
             <h2 class="section-title">📚 Connaissances de base</h2>
             <div class="knowledge-list">
                 <div class="knowledge-item"><h4>Domaine animal (Moyen)</h4><p>Espèces courantes, alimentation, habitat, habitudes et particularités physiques ; signes de stress, maladie ou agressivité.</p></div>
@@ -195,10 +219,12 @@
                 <div class="knowledge-item"><h4>Bestiaire élémentaire (Mineur)</h4><p>Notions d’habitat, comportement et Nature influençant le corps ou l’essence des créatures, sans révéler toutes leurs capacités.</p></div>
             </div>
         </section>
-        <section class="section"><h2 class="section-title">🗡️ Classe d’Arme</h2><div class="content-box"><p><strong>Aucune.</strong></p></div></section>
+        <section class="section reveal-section" id="termion-section-8"><p class="tv-eyebrow">Livre 08 · Arsenal</p>
+            <h2 class="section-title">🗡️ Classe d’Arme</h2><div class="content-box"><p><strong>Aucune.</strong></p></div></section>
 
         <!-- Équipement -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-9">
+            <p class="tv-eyebrow">Livre 09 · Arsenal</p>
             <h2 class="section-title">🎁 Équipement de départ</h2>
             <div class="equipment-grid">
                 <div class="equipment-item"><span class="icon">🛡️</span><div><h4>Armure légère de base</h4><p>Protection du Liant.</p></div></div>
@@ -209,7 +235,8 @@
         </section>
 
         <!-- Compétences -->
-        <section class="section"><h2 class="section-title">🎯 Compétences proposées</h2><div class="competences-grid">
+        <section class="section reveal-section" id="termion-section-10"><p class="tv-eyebrow">Livre 10 · Savoir-faire</p>
+            <h2 class="section-title">🎯 Compétences proposées</h2><div class="competences-grid">
                 <div class="competence-category"><h3>Compétences de caractéristique</h3><ul class="competence-list">
                         <li><strong>Communication animale (Charisme)</strong> — Capacité à transmettre une intention claire à une créature par la voix, les gestes, la posture et le rythme. Sert à calmer, guider, obtenir un arrêt, un rappel ou éviter une escalade.</li>
                         <li><strong>Dressage (Charisme)</strong> — Art de former un animal par routines, récompenses et limites cohérentes, sans casser son instinct. Permet d'installer des comportements fiables et d'améliorer l'obéissance sur la durée.</li>
@@ -235,3 +262,4 @@
     <script src="../../../Java/Classe/Classe classique/Liant.js"></script>
 </body>
 </html>
+

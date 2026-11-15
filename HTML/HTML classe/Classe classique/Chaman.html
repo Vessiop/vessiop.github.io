@@ -9,7 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../../../CSS/css extender/Classe jdr CSS/fiches-responsive.css">
 </head>
-<body>
+<body class="termion-classic-v2">
+    <div class="tv-ambient" aria-hidden="true"></div>
     <div class="parchment-overlay"></div>
     
     <!-- Bouton retour -->
@@ -21,15 +22,29 @@
             <img src="../../../Image/cHAMAN.png" alt="Chaman">
         </div>
         <div class="hero-content">
+            <p class="tv-kicker">✦ ARCHIVES TERMION · CLASSE CLASSIQUE</p>
             <h1 class="class-title">🌿 Chaman</h1>
+            <div class="tv-seal" aria-hidden="true"><span>❈</span></div>
             <p class="class-quote">« Je ne parle pas aux esprits. Je les écoute. Et quand ils crient... le monde change. »</p>
             <p class="class-type">🍃 Conducteur • magie environnementale • communion • nature</p>
+            <div class="tv-disciplines">ESPRITS • NATURE • RITES</div>
         </div>
     </header>
+    <nav class="tv-nav" aria-label="Navigation de la classe">
+        <a href="#termion-section-1">Présentation</a>
+        <a href="#termion-section-2">Statistiques</a>
+        <a href="#termion-section-3">Talents</a>
+        <a href="#termion-section-4">Origines</a>
+        <a href="#termion-section-5">Connaissances</a>
+        <a href="#termion-section-6">Équipement</a>
+        <a href="#termion-section-7">Compétences</a>
+    </nav>
+
 
     <main class="container">
         <!-- Description -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-1">
+            <p class="tv-eyebrow">Livre 01 · Chroniques</p>
             <h2 class="section-title">📄 Description</h2>
             <div class="content-box">
                 <p>Le Chaman n'est pas un mage qui impose sa volonté : c'est un conducteur. Il puise sa puissance dans ce qui l'entoure — sol, air, eau, végétation, ombres, présence d'un lieu — et transforme l'environnement en réservoir vivant qu'il canalise par des rites courts, des marques et des ancrages. Son art repose sur l'accord du terrain : plus le milieu est riche, chargé ou "cohérent", plus ses manipulations deviennent profondes et flexibles.</p>
@@ -44,7 +59,8 @@
         </section>
 
         <!-- Statistiques de base -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-2">
+            <p class="tv-eyebrow">Livre 02 · Essence & attributs</p>
             <h2 class="section-title">📊 Statistiques de base</h2>
             <div class="stats-grid">
                 <div class="stat-category">
@@ -97,7 +113,8 @@
         </section>
 
         <!-- Talents de base -->
-        <section class="section"><h2 class="section-title">🎓 Talents de classe</h2>
+        <section class="section reveal-section" id="termion-section-3"><p class="tv-eyebrow">Livre 03 · Dons & maîtrises</p>
+            <h2 class="section-title">🎓 Talents de classe</h2>
             <div class="talent-card"><h3>Maîtrise mineure — Magie environnementale</h3><p><strong>Magie environnementale +2 (SAG)</strong>. Manipule une matière, une énergie ou un phénomène visible, accessible ou logiquement présent : déplacer, déformer, rassembler, disperser ou modifier légèrement son comportement. Une manipulation simple demande généralement <strong>1 PA</strong>, sans jet si elle est simple et maîtrisée. Un jet peut être demandé si elle est difficile, précise, opposée ou réalisée dans de mauvaises conditions.<br>La maîtrise seule ne crée pas de matière absente, ne cause pas directement de dégâts ni d’effet de combat, ne déplace pas de force une créature et ne produit pas de transformation majeure : ces usages nécessitent des facultés.</p></div>
 
             <div class="talent-card"><h3>Conducteur environnemental</h3><p><strong>1 fois par tour, durant ton propre tour</strong>, utilise une faculté de Magie environnementale de niveau 1 coûtant normalement 1 PA en dépensant <strong>1 PR à la place</strong>. Les autres coûts restent inchangés. Exclut les facultés demandant Concentration, temps d’incantation ou plus de 1 PA.</p></div>
@@ -106,7 +123,8 @@
 
             <div class="talent-card"><h3>Grâce environnementale</h3><p>Une compréhension instinctive permet de percevoir les Filaments environnementaux comme des courants d’Essence magique et de les guider plutôt que produire soi-même l’énergie. Cette Grâce donne <strong>accès à la Maîtrise mineure — Magie environnementale</strong> ; l’étude seule ne donne pas la perception et la manipulation d’un véritable Chaman.</p></div>
         </section>
-        <section class="section"><h2 class="section-title">🌿 Origines du Chaman — 1 au choix</h2>
+        <section class="section reveal-section" id="termion-section-4"><p class="tv-eyebrow">Livre 04 · Destins</p>
+            <h2 class="section-title">🌿 Origines du Chaman — 1 au choix</h2>
             <div class="parcours-grid">
                 <div class="parcours-card sage">
                     <h3>🌲 Enfant des Terres Vivantes</h3><p class="parcours-description">Ton art s’est formé au rythme des forêts, marais, montagnes, de la faune et de la flore. Tu agis avec la nature plutôt qu’à la dominer.</p>
@@ -139,7 +157,8 @@
         </section>
 
         <!-- Connaissances -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-5">
+            <p class="tv-eyebrow">Livre 05 · Savoirs</p>
             <h2 class="section-title">📚 Connaissances communes</h2>
             <div class="knowledge-list">
                 <div class="knowledge-item"><h4>Domaine Chamanique (Moyen)</h4><p>Traditions, rites, catalyseurs, marques et ancrages ; reconnaître les traces d’une pratique chamanique.</p></div>
@@ -172,7 +191,8 @@
         </section>
 
         <!-- Équipement -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-6">
+            <p class="tv-eyebrow">Livre 06 · Arsenal</p>
             <h2 class="section-title">🎒 Équipement de base</h2>
             
             <div class="equipment-grid">
@@ -212,7 +232,8 @@
         </section>
 
         <!-- Compétences -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-7">
+            <p class="tv-eyebrow">Livre 07 · Savoir-faire</p>
             <h2 class="section-title">🧩 Compétences proposées</h2>
             
             <div class="competences-grid">
@@ -253,3 +274,4 @@
     <script src="../../../Java/Classe/Classe classique/Chaman.js"></script>
 </body>
 </html>
+

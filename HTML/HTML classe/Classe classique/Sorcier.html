@@ -9,7 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../../../CSS/css extender/Classe jdr CSS/fiches-responsive.css">
 </head>
-<body>
+<body class="termion-classic-v2">
+    <div class="tv-ambient" aria-hidden="true"></div>
     <div class="parchment-overlay"></div>
     
     <!-- Bouton retour -->
@@ -21,15 +22,30 @@
             <img src="../../../Image/sORCIER.png" alt="Sorcier Maudit">
         </div>
         <div class="hero-content">
+            <p class="tv-kicker">✦ ARCHIVES TERMION · CLASSE CLASSIQUE</p>
             <h1 class="class-title">☠️ Sorcier Maudit</h1>
+            <div class="tv-seal" aria-hidden="true"><span>☷</span></div>
             <p class="class-quote">« Ce pouvoir n'a pas de prix. Ou plutôt si… et je le paierai en entier. »</p>
             <p class="class-type">🌑 Lanceur de sorts maudits • magie impure • corruption • puissance interdite</p>
+            <div class="tv-disciplines">OCCULTE • MALÉDICTION • POUVOIR</div>
         </div>
     </header>
+    <nav class="tv-nav" aria-label="Navigation de la classe">
+        <a href="#termion-section-1">Présentation</a>
+        <a href="#termion-section-2">Statistiques</a>
+        <a href="#termion-section-3">Talents</a>
+        <a href="#termion-section-4">Chemins</a>
+        <a href="#termion-section-5">Connaissances</a>
+        <a href="#termion-section-6">Armes</a>
+        <a href="#termion-section-7">Équipement</a>
+        <a href="#termion-section-8">Compétences</a>
+    </nav>
+
 
     <main class="container">
         <!-- Description -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-1">
+            <p class="tv-eyebrow">Livre 01 · Chroniques</p>
             <h2 class="section-title">📜 Présentation</h2>
             <div class="content-box">
                 <p>Les Sorciers Maudits forment une caste de personnes qui ont touché à l'interdit — souvent au prix de leur santé, de leur équilibre… ou de leur âme. À force de feuilleter des manuscrits scellés et des grimoires proscrits, ils ont appris à façonner une énergie impure et corruptrice : la Magie Maudite, nature radicalement opposée à la magie pure. Cette voie offre un potentiel que les magies dites "normales" peinent à égaler : relever les morts, tordre l'essence vitale, manipuler les âmes, altérer des lois que d'autres n'osent même pas approcher. Mais ce pouvoir n'est jamais gratuit.</p>
@@ -39,7 +55,8 @@
         </section>
 
         <!-- Statistiques de base -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-2">
+            <p class="tv-eyebrow">Livre 02 · Essence & attributs</p>
             <h2 class="section-title">📊 Statistiques de base</h2>
             <div class="stats-grid">
                 <div class="stat-category">
@@ -92,14 +109,16 @@
         </section>
 
         <!-- Talents de base -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-3">
+            <p class="tv-eyebrow">Livre 03 · Dons & maîtrises</p>
             <h2 class="section-title">🎓 Talents de base</h2>
             <div class="talent-card"><h3>Pacte de la Corruption</h3><p>Rituel, grimoire, contamination, héritage ou contact surnaturel : le Pacte permet à la Source de produire de la Magie Maudite, sans nécessiter un contrat avec une entité. Offre Magie Maudite (N.A) +5, indépendamment de la branche choisie.</p></div>
             <div class="talent-card"><h3>Dégénérescence Maudite</h3><p>L'énergie maudite laisse une corruption dans le corps. Jauge de Dégénérescence : <strong>0 / 25</strong>.</p></div>
         </section>
 
         <!-- Voies -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-4">
+            <p class="tv-eyebrow">Livre 04 · Voies</p>
             <h2 class="section-title">🧭 Le Chemin Occulte</h2>
             <p class="intro-text">Votre personnage n'est pas comme les autres. Son origine peut varier : un utilisateur de magie en quête d'une nouvelle forme de puissance, un érudit tombé sur un ouvrage capable de lui faire basculer l'esprit vers des arts impies, ou encore un survivant marqué par un contact interdit. Mais quel que soit son point de départ, ce chemin a toujours le même centre : l'engagement dans l'une de ces voies.</p>
             
@@ -191,7 +210,8 @@
         </section>
 
         <!-- Connaissances -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-5">
+            <p class="tv-eyebrow">Livre 05 · Savoirs</p>
             <h2 class="section-title">📚 Connaissances</h2>
             
             <h3 class="subsection-title">Connaissances de base</h3>
@@ -283,9 +303,11 @@
             </div>
         </section>
 
-        <section class="section"><h2 class="section-title">🗡️ Classe d’Arme</h2><div class="highlight-box"><p>Aucune.</p></div></section>
+        <section class="section reveal-section" id="termion-section-6"><p class="tv-eyebrow">Livre 06 · Arsenal</p>
+            <h2 class="section-title">🗡️ Classe d’Arme</h2><div class="highlight-box"><p>Aucune.</p></div></section>
         <!-- Équipement -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-7">
+            <p class="tv-eyebrow">Livre 07 · Arsenal</p>
             <h2 class="section-title">📦 Équipement de départ</h2>
             
             <div class="equipment-grid">
@@ -324,7 +346,8 @@
         </section>
 
         <!-- Compétences -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-8">
+            <p class="tv-eyebrow">Livre 08 · Savoir-faire</p>
             <h2 class="section-title">🎯 Compétences proposées</h2>
             
             <div class="competences-grid">
@@ -361,3 +384,4 @@
     <script src="../../../Java/Classe/Classe classique/Sorcier.js"></script>
 </body>
 </html>
+

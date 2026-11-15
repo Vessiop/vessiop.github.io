@@ -9,7 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <link rel="stylesheet" href="../../../CSS/css extender/Classe jdr CSS/fiches-responsive.css">
 </head>
-<body>
+<body class="termion-classic-v2">
+    <div class="tv-ambient" aria-hidden="true"></div>
     <div class="parchment-overlay"></div>
     
     <!-- Bouton retour -->
@@ -21,15 +22,30 @@
             <img src="../../../Image/Chasseur.png" alt="Chasseur">
         </div>
         <div class="hero-content">
+            <p class="tv-kicker">✦ ARCHIVES TERMION · CLASSE CLASSIQUE</p>
             <h1 class="class-title">🐾 Chasseur</h1>
+            <div class="tv-seal" aria-hidden="true"><span>⌖</span></div>
             <p class="class-quote">« Les bêtes me parlent. Les monstres me fuient. Et toi... tu ferais mieux de ne pas me suivre. »</p>
             <p class="class-type">🎯 Discrétion • Embuscade • Pistage • Combat adaptatif</p>
+            <div class="tv-disciplines">PISTE • PRÉCISION • SURVIE</div>
         </div>
     </header>
+    <nav class="tv-nav" aria-label="Navigation de la classe">
+        <a href="#termion-section-1">Présentation</a>
+        <a href="#termion-section-2">Statistiques</a>
+        <a href="#termion-section-3">Talents</a>
+        <a href="#termion-section-4">Terrains</a>
+        <a href="#termion-section-5">Connaissances</a>
+        <a href="#termion-section-6">Armes</a>
+        <a href="#termion-section-7">Équipement</a>
+        <a href="#termion-section-8">Compétences</a>
+    </nav>
+
 
     <main class="container">
         <!-- Description -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-1">
+            <p class="tv-eyebrow">Livre 01 · Chroniques</p>
             <h2 class="section-title">📜 Description / Présentation</h2>
             <div class="content-box">
                 <p>Le Chasseur n'est pas seulement un survivant : c'est une caste reconnue et recherchée, souvent considérée comme l'une des plus fiables quand il faut retrouver ce que le monde a "avalé". Personnes disparues, fugitifs, caravanes perdues, bêtes devenues dangereuses, créatures inconnues… quand une piste est froide, quand les routes mentent, et quand personne n'ose s'enfoncer plus loin, c'est vers les Chasseurs qu'on se tourne. On les recommande parce qu'ils reviennent avec des réponses : une trace, une direction, un nom, une vérité — parfois une preuve, parfois une proie, parfois un corps.</p>
@@ -51,7 +67,8 @@
         </section>
 
         <!-- Statistiques de base -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-2">
+            <p class="tv-eyebrow">Livre 02 · Essence & attributs</p>
             <h2 class="section-title">📊 Statistiques de base</h2>
             <div class="stats-grid">
                 <div class="stat-category">
@@ -104,7 +121,8 @@
         </section>
 
         <!-- Talents de base -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-3">
+            <p class="tv-eyebrow">Livre 03 · Dons & maîtrises</p>
             <h2 class="section-title">🎓 Talents (base)</h2>
             
             <div class="talent-card">
@@ -131,7 +149,8 @@
         </section>
 
         <!-- Terrains de chasse -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-4">
+            <p class="tv-eyebrow">Livre 04 · Voies</p>
             <h2 class="section-title">🏞️ Terrain de chasse de prédilection (1 au choix)</h2>
             
             <div class="interactive-hint">
@@ -344,7 +363,8 @@
         </section>
 
         <!-- Connaissances de base -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-5">
+            <p class="tv-eyebrow">Livre 05 · Savoirs</p>
             <h2 class="section-title">📚 Connaissances</h2>
             
             <h3 class="subsection-title">✅ Connaissances (de base)</h3>
@@ -373,7 +393,8 @@
         </section>
 
         <!-- Classe d'arme -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-6">
+            <p class="tv-eyebrow">Livre 06 · Arsenal</p>
             <h2 class="section-title">🎁 Classe d'arme</h2>
             <div class="content-box">
                 <p>+1 arme à distance (arc, arbalète, arme de jet…)</p>
@@ -381,7 +402,8 @@
         </section>
 
         <!-- Équipement -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-7">
+            <p class="tv-eyebrow">Livre 07 · Arsenal</p>
             <h2 class="section-title">🎒 Objets de départ</h2>
             
             <div class="equipment-grid">
@@ -431,7 +453,8 @@
         </section>
 
         <!-- Compétences -->
-        <section class="section">
+        <section class="section reveal-section" id="termion-section-8">
+            <p class="tv-eyebrow">Livre 08 · Savoir-faire</p>
             <h2 class="section-title">🎯 Compétences</h2>
             
             <h3 class="subsection-title">Compétences de caractéristique proposées</h3>
@@ -517,3 +540,4 @@
     <script src="../../../Java/Classe/Classe classique/Chasseur.js"></script>
 </body>
 </html>
+

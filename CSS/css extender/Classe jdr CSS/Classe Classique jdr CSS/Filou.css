@@ -748,3 +748,74 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Termion — structure des classes classiques V2 | couche visuelle isolée */
+body.termion-classic-v2 {
+  --tv-accent: #a788c2; --tv-light: #e6cbf0; --tv-deep: #271d31;
+  --tv-paper: #ebe2d2; --tv-muted: #b8ad9e;
+  font-family: 'Crimson Text', Georgia, serif;
+  color: var(--tv-paper);
+  background: radial-gradient(ellipse at 75% -15%, color-mix(in srgb,var(--tv-accent) 20%,transparent),transparent 48%),
+              radial-gradient(ellipse at 8% 40%,color-mix(in srgb,var(--tv-deep) 60%,transparent),transparent 52%),
+              linear-gradient(155deg,#0a0c11 0%,#15161c 48%,#080a0e 100%);
+  overflow-x: clip; min-height:100vh;
+}
+body.termion-classic-v2 *, body.termion-classic-v2 *::before, body.termion-classic-v2 *::after {box-sizing:border-box}
+body.termion-classic-v2 .tv-ambient {position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0;background:radial-gradient(circle at 80% 15%,color-mix(in srgb,var(--tv-accent) 10%,transparent),transparent 25%)}
+body.termion-classic-v2 .tv-ambient::before {content:"";position:absolute;width:min(70vw,750px);aspect-ratio:1;right:-180px;top:-240px;border-radius:50%;border:1px solid color-mix(in srgb,var(--tv-accent) 20%,transparent);box-shadow:0 0 0 58px color-mix(in srgb,var(--tv-accent) 3%,transparent),0 0 0 120px color-mix(in srgb,var(--tv-accent) 2%,transparent);animation:tv-breathe 12s ease-in-out infinite}
+body.termion-classic-v2 .tv-ambient::after {content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,transparent 98%,rgba(255,255,255,.025) 100%),linear-gradient(0deg,transparent 98%,rgba(255,255,255,.018) 100%);background-size:68px 68px;opacity:.3}
+body.termion-classic-v2 .parchment-overlay,body.termion-classic-v2 .flame-overlay {pointer-events:none;opacity:.16}
+body.termion-classic-v2 .hero-section {position:relative;z-index:2;max-width:1330px;min-height:0;margin:0 auto;padding:95px clamp(20px,5vw,70px) 75px;display:grid;grid-template-columns:minmax(210px,340px) minmax(0,1fr);gap:clamp(28px,6vw,90px);align-items:center;background:none;isolation:isolate}
+body.termion-classic-v2 .hero-section::before {content:"";position:absolute;inset:30px 24px 0;z-index:-1;border:1px solid color-mix(in srgb,var(--tv-accent) 24%,transparent);background:linear-gradient(120deg,rgba(15,16,22,.48),rgba(15,16,22,.05));clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%)}
+body.termion-classic-v2 .hero-section::after {content:"";position:absolute;bottom:0;left:9%;right:9%;height:1px;background:linear-gradient(90deg,transparent,var(--tv-accent),transparent)}
+body.termion-classic-v2 .hero-image {position:relative;flex:initial;min-width:0;width:100%;max-width:340px;padding:9px;margin:0 auto;border-radius:3px;border:1px solid color-mix(in srgb,var(--tv-accent) 60%,transparent);background:linear-gradient(140deg,rgba(255,255,255,.065),rgba(0,0,0,.3));box-shadow:0 26px 65px rgba(0,0,0,.4),0 0 70px color-mix(in srgb,var(--tv-accent) 13%,transparent);animation:none}
+body.termion-classic-v2 .hero-image::after {content:"✦";position:absolute;bottom:-17px;left:50%;transform:translateX(-50%);color:var(--tv-light);font-size:24px;text-shadow:0 0 22px var(--tv-accent)}
+body.termion-classic-v2 .hero-image img {display:block;width:100%;max-width:100%;height:auto;max-height:480px;object-fit:cover;object-position:top;border:1px solid color-mix(in srgb,var(--tv-light) 26%,transparent);border-radius:0;box-shadow:none;filter:contrast(1.05) saturate(.87);transition:filter .35s ease,transform .35s ease}
+body.termion-classic-v2 .hero-image:hover img {filter:contrast(1.07) saturate(1.04);transform:scale(1.008)}
+body.termion-classic-v2 .hero-content {min-width:0;animation:none}
+body.termion-classic-v2 .tv-kicker {font-family:'Cinzel',Georgia,serif;color:var(--tv-light);letter-spacing:.22em;font-size:.75rem;margin:0 0 14px;text-transform:uppercase}
+body.termion-classic-v2 .class-title {font-family:'Cinzel',Georgia,serif;font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.12;letter-spacing:.015em;margin:0 0 22px;color:#f4ecdf;background:none;-webkit-text-fill-color:currentColor;text-shadow:0 3px 26px rgba(0,0,0,.65),0 0 34px color-mix(in srgb,var(--tv-accent) 17%,transparent);animation:none}
+body.termion-classic-v2 .class-title::after {content:none}
+body.termion-classic-v2 .tv-seal {display:grid;place-items:center;width:46px;height:46px;border:1px solid var(--tv-accent);transform:rotate(45deg);margin:0 0 22px 8px;color:var(--tv-light);background:color-mix(in srgb,var(--tv-accent) 9%,#121017);font-size:24px}
+body.termion-classic-v2 .tv-seal span {transform:rotate(-45deg)}
+body.termion-classic-v2 .class-quote {border-left:2px solid var(--tv-accent);color:var(--tv-paper);font-style:italic;padding:5px 0 5px 20px;margin:0 0 20px;font-size:clamp(1.14rem,2vw,1.5rem);text-shadow:none}
+body.termion-classic-v2 .class-type {color:var(--tv-muted);font-size:1.08rem;line-height:1.7;text-shadow:none}
+body.termion-classic-v2 .tv-disciplines {font-family:'Cinzel',Georgia,serif;color:var(--tv-light);font-size:.72rem;letter-spacing:.10em;margin-top:25px;padding-top:17px;border-top:1px solid color-mix(in srgb,var(--tv-accent) 35%,transparent)}
+body.termion-classic-v2 .tv-nav {position:sticky;top:0;z-index:70;display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;padding:12px max(14px,3vw);background:rgba(10,11,16,.94);border-block:1px solid color-mix(in srgb,var(--tv-accent) 33%,transparent);backdrop-filter:blur(14px);box-shadow:0 12px 26px rgba(0,0,0,.22)}
+body.termion-classic-v2 .tv-nav a {font-family:'Cinzel',Georgia,serif;display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;color:var(--tv-muted);font-size:.72rem;text-decoration:none;letter-spacing:.035em;border-bottom:2px solid transparent;transition:color .2s,border-color .2s,background .2s}
+body.termion-classic-v2 .tv-nav a:hover,body.termion-classic-v2 .tv-nav a[aria-current="location"] {color:var(--tv-light);border-bottom-color:var(--tv-accent);background:color-mix(in srgb,var(--tv-accent) 10%,transparent)}
+body.termion-classic-v2 .container {position:relative;z-index:1;max-width:1240px;padding:70px clamp(18px,4vw,50px) 100px;margin:0 auto}
+body.termion-classic-v2 .section {scroll-margin-top:95px;margin-bottom:clamp(46px,6vw,78px);min-width:0;animation:none}
+body.termion-classic-v2 .section-title {font-family:'Cinzel',Georgia,serif;color:#f0e9dc;letter-spacing:0;font-size:clamp(1.35rem,2.2vw,2rem);padding-bottom:17px;margin-bottom:26px;border-bottom:1px solid color-mix(in srgb,var(--tv-accent) 45%,transparent);text-shadow:none}
+body.termion-classic-v2 .section-title::after {content:"";position:absolute;bottom:-1px;left:0;width:90px;height:2px;background:var(--tv-accent);animation:none}
+body.termion-classic-v2 .tv-eyebrow {display:block;color:var(--tv-light);font-family:'Cinzel',Georgia,serif;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;margin:0 0 7px}
+body.termion-classic-v2 .content-box,body.termion-classic-v2 .stat-category,body.termion-classic-v2 .talent-card,body.termion-classic-v2 .knowledge-item,body.termion-classic-v2 .equipment-item,body.termion-classic-v2 .competence-category,body.termion-classic-v2 .origine-card,body.termion-classic-v2 .origin-card,body.termion-classic-v2 .vocation-card,body.termion-classic-v2 .parcours-card {background:linear-gradient(150deg,rgba(27,28,35,.96),rgba(16,18,24,.94));color:var(--tv-paper);border:1px solid color-mix(in srgb,var(--tv-accent) 32%,transparent);border-radius:5px;box-shadow:0 16px 36px rgba(0,0,0,.25);backdrop-filter:none;min-width:0;overflow-wrap:anywhere}
+body.termion-classic-v2 .content-box {padding:clamp(20px,3vw,32px);border-left:3px solid var(--tv-accent)}
+body.termion-classic-v2 .content-box p,body.termion-classic-v2 .talent-card p,body.termion-classic-v2 .origine-card p {color:var(--tv-paper);line-height:1.75}
+body.termion-classic-v2 .content-box strong,body.termion-classic-v2 .talent-card strong {color:#f5e5ce;text-shadow:none}
+body.termion-classic-v2 .stat-category,body.termion-classic-v2 .competence-category {padding:clamp(18px,2.5vw,26px)}
+body.termion-classic-v2 .stats-grid,body.termion-classic-v2 .equipment-grid,body.termion-classic-v2 .competences-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+body.termion-classic-v2 .stat-category h3,body.termion-classic-v2 .talent-card h3,body.termion-classic-v2 .knowledge-item h4,body.termion-classic-v2 .competence-category h3,body.termion-classic-v2 .equipment-item h4 {color:var(--tv-light);text-shadow:none}
+body.termion-classic-v2 .stat-item,body.termion-classic-v2 .traits-grid span {border-radius:3px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);box-shadow:none;color:var(--tv-paper)}
+body.termion-classic-v2 .stat-item.positive {border-color:rgba(131,192,154,.36);color:#bce2c9;background:rgba(35,108,68,.13)}
+body.termion-classic-v2 .stat-item.negative {border-color:rgba(209,110,118,.35);color:#f0b0b5;background:rgba(122,41,47,.13)}
+body.termion-classic-v2 .stat-item.highlight {border-color:var(--tv-accent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tv-accent) 15%,transparent)}
+body.termion-classic-v2 .chart-container {grid-column:1/-1;max-width:590px;margin-inline:auto;width:100%}
+body.termion-classic-v2 .chart-wrapper {max-width:100%;border:1px solid color-mix(in srgb,var(--tv-accent) 35%,transparent);background:radial-gradient(circle, color-mix(in srgb,var(--tv-deep) 38%,transparent),#0e1119);box-shadow:none}
+body.termion-classic-v2 .chart-wrapper canvas {max-width:100%;max-height:450px}
+body.termion-classic-v2 .talent-card {position:relative;padding:26px;margin-bottom:16px;border-left:3px solid var(--tv-accent);transition:border-color .2s,transform .2s}
+body.termion-classic-v2 .talent-card:hover,body.termion-classic-v2 .origine-card:hover,body.termion-classic-v2 .origin-card:hover {transform:translateY(-2px);border-color:var(--tv-light);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+body.termion-classic-v2 .origine-card.selected,body.termion-classic-v2 .origin-card.selected,body.termion-classic-v2 .vocation-card.selected {border-color:var(--tv-light);box-shadow:0 0 0 2px color-mix(in srgb,var(--tv-accent) 32%,transparent),0 14px 38px rgba(0,0,0,.34)}
+body.termion-classic-v2 .interactive-hint,body.termion-classic-v2 .highlight-box {border-color:var(--tv-accent);background:color-mix(in srgb,var(--tv-deep) 45%,#12141a);box-shadow:none}
+body.termion-classic-v2 .origine-grid,body.termion-classic-v2 .origin-grid {gap:22px}
+body.termion-classic-v2 .equipment-item,body.termion-classic-v2 .knowledge-item {padding:22px}
+body.termion-classic-v2 a:focus-visible,body.termion-classic-v2 button:focus-visible {outline:2px solid var(--tv-light);outline-offset:4px}
+body.termion-classic-v2 .footer {position:relative;z-index:1;border-top:1px solid color-mix(in srgb,var(--tv-accent) 20%,transparent);color:var(--tv-muted)}
+body.termion-classic-v2 .back-button {z-index:100;background:rgba(10,11,16,.95);color:var(--tv-light);border:1px solid var(--tv-accent);border-radius:4px;box-shadow:none;text-shadow:none}
+body.termion-classic-v2 .back-button:hover {background:var(--tv-deep);color:#fff;box-shadow:0 0 22px color-mix(in srgb,var(--tv-accent) 18%,transparent)}
+body.termion-classic-v2 .tv-nav a:focus-visible {outline:2px solid var(--tv-light);outline-offset:2px}
+@keyframes tv-breathe {50% {opacity:.5;transform:scale(1.04)}}
+@media (max-width:850px) {body.termion-classic-v2 .hero-section {grid-template-columns:minmax(0,1fr);padding:75px 24px 40px;text-align:center;gap:35px}body.termion-classic-v2 .hero-image {max-width:280px}body.termion-classic-v2 .tv-seal {margin:0 auto 25px}body.termion-classic-v2 .class-quote {text-align:left}body.termion-classic-v2 .stats-grid,body.termion-classic-v2 .competences-grid,body.termion-classic-v2 .equipment-grid {grid-template-columns:minmax(0,1fr)}body.termion-classic-v2 .tv-nav {justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}body.termion-classic-v2 .tv-nav a {white-space:nowrap;flex:none}}
+@media (max-width:520px) {body.termion-classic-v2 .hero-section {padding-top:40px}body.termion-classic-v2 .hero-section::before{inset:15px 10px 0}body.termion-classic-v2 .container {padding:38px 16px 65px}body.termion-classic-v2 .talent-card {padding:20px}body.termion-classic-v2 .bonus-grid,body.termion-classic-v2 .traits-grid {grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce) {body.termion-classic-v2 .tv-ambient::before {animation:none}body.termion-classic-v2 .hero-image img {transition:none}body.termion-classic-v2 .talent-card {transition:none}}
