@@ -3,17 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const source = window.Chart?.getChart('statsChart');
     if (!section || !source) return;
 
-    const heading = section.querySelector(':scope > h2, :scope > .section-heading');
     const sourceCard = source.canvas.closest('.chart-container');
-    if (!heading || !sourceCard) return;
+    if (!sourceCard) return;
 
     const sourceFrame = source.canvas.parentElement;
     const { clone } = Chart.helpers;
 
     const layout = document.createElement('div');
     layout.className = 'origins-layout';
-    const content = document.createElement('div');
-    content.className = 'origins-content';
     const panel = document.createElement('aside');
     panel.className = 'origins-chart';
 
@@ -30,9 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
     card.append(title, frame);
     panel.append(card);
 
-    while (heading.nextSibling) content.append(heading.nextSibling);
-    layout.append(content, panel);
-    section.append(layout);
+    const continuation = section.nextElementSibling;
+    section.before(layout);
+    layout.append(section);
+    if (continuation?.hasAttribute('data-origins-continuation')) layout.append(continuation);
+    layout.append(panel);
+
+    const nav = document.querySelector('.tv-nav, .class-nav');
+    const positionChart = () => {
+        const margin = document.documentElement.clientWidth - layout.getBoundingClientRect().right;
+        const available = margin - 32;
+        const hasRoom = available >= 220;
+        layout.classList.toggle('origins-layout--sidebar', hasRoom);
+        if (hasRoom) layout.style.setProperty('--origins-rail-width', `${Math.min(320, available)}px`);
+        else layout.style.setProperty('--origins-dock-overhang', `${Math.max(0, margin - 16)}px`);
+        if (nav) layout.style.setProperty('--origins-nav-height', `${nav.offsetHeight}px`);
+    };
+    positionChart();
+    const resize = new ResizeObserver(positionChart);
+    resize.observe(layout);
+    if (nav) resize.observe(nav);
+    window.addEventListener('resize', positionChart);
 
     const options = clone(source.config.options);
     options.responsive = true;
@@ -63,13 +78,4 @@ document.addEventListener('DOMContentLoaded', () => {
             preview.update('none');
         }
     });
-
-    const nav = document.querySelector('.tv-nav, .class-nav');
-    if (nav) {
-        const setOffset = () => {
-            layout.style.setProperty('--origins-nav-height', `${nav.offsetHeight}px`);
-        };
-        setOffset();
-        new ResizeObserver(setOffset).observe(nav);
-    }
 }, { once: true });

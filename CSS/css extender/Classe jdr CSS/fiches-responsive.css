@@ -33,22 +33,17 @@ body .stats-grid:has(> .chart-container) {
 body:has(.origins-layout) { overflow-x: clip; }
 
 .origins-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) clamp(250px, 28%, 340px);
-    gap: 24px;
-    align-items: start;
-}
-
-.origins-content { min-width: 0; }
-
-.origins-content > [class$="-grid"] {
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    --origins-chart-height: clamp(100px, 20svh, 150px);
+    position: relative;
 }
 
 .origins-chart {
     position: sticky;
-    top: calc(var(--origins-nav-height, 0px) + 16px);
-    min-width: 0;
+    bottom: 0;
+    width: min(100%, 370px);
+    margin-block-start: 16px;
+    margin-inline-start: auto;
+    margin-inline-end: calc(-1 * var(--origins-dock-overhang, 0px));
     z-index: 2;
 }
 
@@ -56,11 +51,15 @@ body:has(.origins-layout) { overflow-x: clip; }
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: 16px;
+    display: grid;
+    grid-template-columns: minmax(120px, 42%) minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
 }
 
 .origins-chart .chart-wrapper {
-    height: clamp(125px, 42svh, 300px);
+    height: var(--origins-chart-height);
     max-height: none;
     padding: 4px;
     aspect-ratio: auto;
@@ -72,39 +71,37 @@ body:has(.origins-layout) { overflow-x: clip; }
     max-height: none;
 }
 
-@media (max-width: 999px) {
-    .origins-layout {
-        --origins-chart-height: clamp(105px, 23svh, 190px);
-        display: block;
-    }
+.origins-layout:not(.origins-layout--sidebar) .origins-chart > .stat-category.chart-container {
+    background-color: var(--tv-deep, #11141b);
+}
 
-    .origins-chart {
-        top: auto;
-        bottom: 0;
-        margin-top: 16px;
-    }
+.origins-layout:not(.origins-layout--sidebar) .origins-chart h3 {
+    font-size: .78rem;
+    line-height: 1.35;
+    margin: 0;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+}
 
-    .origins-chart > .stat-category.chart-container {
-        display: grid;
-        grid-template-columns: minmax(120px, 42%) minmax(0, 1fr);
-        align-items: center;
-        gap: 10px;
-        padding: 8px 12px;
-        background-color: var(--tv-deep, #11141b);
-    }
+.origins-layout:not(.origins-layout--sidebar) > section > [class$="-grid"] > *,
+.origins-layout:not(.origins-layout--sidebar) > section :is(button, input, a[href], [tabindex]) {
+    scroll-margin-block-end: calc(var(--origins-chart-height) + 20px);
+}
 
-    .origins-chart .chart-container h3 {
-        font-size: clamp(.78rem, 2.5vw, 1.05rem);
-        line-height: 1.35;
-        margin: 0;
-        hyphens: auto;
-        overflow-wrap: anywhere;
-    }
+.origins-layout--sidebar > .origins-chart {
+    --origins-chart-height: clamp(125px, 42svh, 300px);
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: calc(100% + 16px);
+    width: var(--origins-rail-width);
+    margin: 0;
+    pointer-events: none;
+}
 
-    .origins-chart .chart-wrapper { height: var(--origins-chart-height); }
-
-    .origins-content > [class$="-grid"] > *,
-    .origins-content :is(button, input, a[href], [tabindex]) {
-        scroll-margin-block-end: calc(var(--origins-chart-height) + 20px);
-    }
+.origins-layout--sidebar > .origins-chart > .stat-category.chart-container {
+    position: sticky;
+    top: calc(var(--origins-nav-height, 0px) + 16px);
+    display: block;
+    padding: 16px;
+    pointer-events: auto;
 }
