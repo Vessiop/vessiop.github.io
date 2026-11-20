@@ -12,54 +12,49 @@ const baseStats = {
     CHA: -3
 };
 
-// Bonus des parcours makariens
-const parcoursBonuses = {
-    'clan-desert': { 
-        INT: 3, 
-        DEX: 3 
+const parcoursOptions = {
+    'clan-desert': {
+        name: 'Clan du Désert',
+        bonuses: { INT: 3, DEX: 3 },
+        details: '+1 en Instinct, en Savoir ou en Sang-froid · Amélioration en Enchantement ou en Insufflation · Écoute des Rémanences'
     },
-    'maison-korrina': { 
-        PER: 3, 
-        DEX: 3 
+    'maison-korrina': {
+        name: 'Maison Korrina',
+        bonuses: { PER: 3, DEX: 3 },
+        details: "+1 en Finesse, en Social ou en Sang-froid · Furtivité Silencieuse · Dialecte Criminel · Lame de l'Ombre Korrina"
     },
-    'monde-souterrain': { 
-        SAG: 3, 
-        CST: 4  // -1 devient +3, donc +4 total
+    'monde-souterrain': {
+        name: 'Monde Souterrain',
+        bonuses: { SAG: 3 },
+        replacements: { CST: 3 },
+        details: "+1 en Métier, en Sang-froid ou en Résilience · Héritage des Forges Souterraines · Forge d'Essence Runelame"
     },
-    'guerrier-elementaire': { 
-        INT: 3, 
-        CST: 4  // -1 devient +3, donc +4 total
+    'guerrier-elementaire': {
+        name: 'Guerrier Élémentaire',
+        bonuses: { INT: 3 },
+        replacements: { CST: 2 },
+        details: '+1 en Savoir, en Résilience ou en Puissance · Âme de la Runelame · Clairvoyance Runique'
     },
-    'champion-desert': { 
-        FOR: 6  // -2 devient +4, donc +6 total
-        // +5 REA mentionné mais pas sur le graphique
+    'champion-desert': {
+        name: "Combattant Avant l'Art — « Champion du Désert »",
+        replacements: { FOR: 3 },
+        details: 'Réactivité +5 (total +8) · +1 en Puissance, en Résilience ou en Finesse · Héritage du Champion des Dunes · Fureur du Champion Runelame'
     }
-};
-
-// Noms des parcours pour l'affichage
-const parcoursNames = {
-    'clan-desert': 'Clan du Désert',
-    'maison-korrina': 'Maison Korrina',
-    'monde-souterrain': 'Monde Souterrain',
-    'guerrier-elementaire': 'Guerrier Élémentaire',
-    'champion-desert': 'Combattant Avant l\'Art — « Champion du Désert »'
 };
 
 let currentParcours = null;
 
 // Fonction pour calculer les stats avec bonus
 function calculateStats(parcours) {
-    const stats = { ...baseStats };
-    if (parcours && parcoursBonuses[parcours]) {
-        const bonuses = parcoursBonuses[parcours];
-        for (let stat in bonuses) {
-            stats[stat] += bonuses[stat];
-        }
+    const { bonuses = {}, replacements = {} } = parcoursOptions[parcours] ?? {};
+    const stats = { ...baseStats, ...replacements };
+    for (const [stat, bonus] of Object.entries(bonuses)) {
+        stats[stat] += bonus;
     }
     return stats;
 }
 
-// Convertir les valeurs pour le graphique (ajouter 4 pour que 0 soit au centre)
+// Décaler l'échelle radiale pour représenter les valeurs négatives.
 function convertStatsForChart(stats) {
     return Object.values(stats).map(val => val + 4);
 }
@@ -172,31 +167,16 @@ function updateStatsDisplay(parcours) {
     if (!displayElement) return;
 
     if (parcours) {
-        const stats = calculateStats(parcours);
-        const bonuses = parcoursBonuses[parcours];
-        let bonusText = '';
-        
-        for (let stat in bonuses) {
-            bonusText += `${stat} ${bonuses[stat] >= 0 ? '+' : ''}${bonuses[stat]} `;
-        }
-        
-        // Ajouter infos spéciales par parcours
-        let extraInfo = '';
-        if (parcours === 'clan-desert') {
-            extraInfo = '<br><strong>Bonus spécial :</strong> +1 Instinct/Savoir, amélioration Enchantement/Insufflation, Écoute des Rémanences';
-        } else if (parcours === 'maison-korrina') {
-            extraInfo = '<br><strong>Bonus spécial :</strong> +1 Finesse/Social/Sang-froid, Furtivité silencieuse, Dialecte Criminel, Affiliation Korrina';
-        } else if (parcours === 'monde-souterrain') {
-            extraInfo = '<br><strong>Bonus spécial :</strong> +1 Métier/Sang-froid, Sens entraîné +5, Forge d\'Essence Runelame';
-        } else if (parcours === 'guerrier-elementaire') {
-            extraInfo = '<br><strong>Bonus spécial :</strong> +1 Savoir/Résilience, amélioration Runelame, Accord Élémentaire';
-        } else if (parcours === 'champion-desert') {
-            extraInfo = '<br><strong>Bonus spécial :</strong> +1 Puissance/Résilience, +5 REA, amélioration Sabre, Endurance des Dunes';
-        }
-        
+        const { name, bonuses = {}, replacements = {}, details } = parcoursOptions[parcours];
+        const changes = [
+            ...Object.entries(bonuses).map(([stat, bonus]) => `${stat} +${bonus}`),
+            ...Object.entries(replacements).map(([stat, value]) => `${stat} ${baseStats[stat]} → +${value}`)
+        ];
+
         displayElement.innerHTML = `
-            <strong>Parcours sélectionné :</strong> ${parcoursNames[parcours]}<br>
-            <strong>Bonus appliqués :</strong> ${bonusText}${extraInfo}
+            <strong>Parcours sélectionné :</strong> ${name}<br>
+            <strong>Caractéristiques :</strong> ${changes.join(' · ')}<br>
+            <strong>Autres gains :</strong> ${details}
         `;
         displayElement.style.display = 'block';
     } else {
@@ -214,18 +194,8 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.cursor = 'pointer';
         
         card.addEventListener('click', function() {
-            const parcoursClass = Array.from(this.classList).find(cls => 
-                ['clan-desert', 'maison-korrina', 'monde-souterrain', 'guerrier-elementaire', 'champion-desert'].includes(cls)
-            );
-            
-            if (parcoursClass) {
-                // Si on clique sur le parcours déjà sélectionné, on le désélectionne
-                if (currentParcours === parcoursClass) {
-                    updateChart(null);
-                } else {
-                    updateChart(parcoursClass);
-                }
-            }
+            if (!Object.hasOwn(parcoursOptions, this.id)) return;
+            updateChart(currentParcours === this.id ? null : this.id);
         });
     });
 
