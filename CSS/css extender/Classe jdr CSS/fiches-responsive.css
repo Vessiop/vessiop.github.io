@@ -28,3 +28,83 @@ body .stats-grid:has(> .chart-container) {
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
+/* Keep the page as the scroll container for the sticky chart. */
+body:has(.origins-layout) { overflow-x: clip; }
+
+.origins-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(250px, 28%, 340px);
+    gap: 24px;
+    align-items: start;
+}
+
+.origins-content { min-width: 0; }
+
+.origins-content > [class$="-grid"] {
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+.origins-chart {
+    position: sticky;
+    top: calc(var(--origins-nav-height, 0px) + 16px);
+    min-width: 0;
+    z-index: 2;
+}
+
+.origins-chart > .stat-category.chart-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 16px;
+}
+
+.origins-chart .chart-wrapper {
+    height: clamp(125px, 42svh, 300px);
+    max-height: none;
+    padding: 4px;
+    aspect-ratio: auto;
+}
+
+.origins-chart .chart-wrapper canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none;
+}
+
+@media (max-width: 999px) {
+    .origins-layout {
+        --origins-chart-height: clamp(105px, 23svh, 190px);
+        display: block;
+    }
+
+    .origins-chart {
+        top: auto;
+        bottom: 0;
+        margin-top: 16px;
+    }
+
+    .origins-chart > .stat-category.chart-container {
+        display: grid;
+        grid-template-columns: minmax(120px, 42%) minmax(0, 1fr);
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        background-color: var(--tv-deep, #11141b);
+    }
+
+    .origins-chart .chart-container h3 {
+        font-size: clamp(.78rem, 2.5vw, 1.05rem);
+        line-height: 1.35;
+        margin: 0;
+        hyphens: auto;
+        overflow-wrap: anywhere;
+    }
+
+    .origins-chart .chart-wrapper { height: var(--origins-chart-height); }
+
+    .origins-content > [class$="-grid"] > *,
+    .origins-content :is(button, input, a[href], [tabindex]) {
+        scroll-margin-block-end: calc(var(--origins-chart-height) + 20px);
+    }
+}
