@@ -981,6 +981,175 @@ const allTalents = [
             "combat",
             "exploration-competences"
         ]
+    },
+    {
+        "nom": "Art du Combat Noble : Rempart du Duelliste",
+        "effet": "Grâce à la coordination de son arme et de son bouclier, le personnage optimise ses mouvements défensifs. Une fois par tour, lorsqu’il effectue une parade au bouclier, il peut cumuler les bonus de compétence de son arme et de son bouclier sur son jet de parade. Cette activation coûte 7 PE. Restriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-rempart-du-duelliste",
+        "condition": "Posséder le talent « Maîtrise de l’art du bouclier » et la maîtrise d’une arme légère de corps à corps.",
+        "categories": [
+            "combat",
+            "defense"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Autorité du Colosse",
+        "effet": "Grâce à sa maîtrise des armes imposantes, le personnage exploite leur poids et leur puissance pour repousser ses adversaires. Une fois par tour, il peut effectuer gratuitement une manœuvre de dégagement en réalisant un jet de confrontation basé sur la Force. En cas de victoire, il repousse sa cible d’au moins 5 ft. Il débloque également la compétence « Confrontation d’arme : X » (N.A), dont le bonus augmente de +1 par niveau de maîtrise de l’arme lourde utilisée (Mineur : +1, Moyen : +2, etc.). Restriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-autorite-du-colosse",
+        "condition": "Posséder la maîtrise d’une arme lourde.",
+        "categories": [
+            "combat"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Harmonie des Lames",
+        "effet": "Grâce à la parfaite synchronisation de ses armes, le personnage développe une réserve de Points de Frappe Successive (PFS), dont la valeur maximale est égale au niveau de sa meilleure maîtrise d'arme légère. Une fois par tour, lorsqu'il effectue une Frappe jumelée, il peut dépenser 1 PFS à la place du PR nécessaire à sa seconde attaque. La réserve de PFS est intégralement restaurée après un repos long. Restriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-harmonie-des-lames",
+        "condition": "Posséder le talent « Ambidextrie » et la maîtrise d'une arme légère.",
+        "categories": [
+            "combat"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Élégance de la Lame Solitaire",
+        "effet": "Tant qu'il manie une arme légère et conserve son autre main libre, le personnage peut adopter l'une des deux techniques suivantes : Garde élégante : augmente sa MD de +10 jusqu'au début de son prochain tour. Tromperie du bretteur : applique l'effet Feinte à un adversaire à portée de son arme. Chaque activation coûte 6 PE.",
+        "cout": 2,
+        "id": "art-du-combat-noble-elegance-de-la-lame-solitaire",
+        "condition": "Maîtriser une arme légère.",
+        "categories": [
+            "combat",
+            "defense"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Danse des Glyphes",
+        "effet": "Le personnage exploite les flux magiques de ses glyphes de combat pour renforcer sa défense. Tant qu'au moins un de ses glyphes de combat magique est actif, il peut activer cet effet afin de bénéficier de +10 en MD. L'activation et le maintien coûtent 5 PE par tour. L'effet cesse lorsqu'aucun glyphe de combat n'est actif ou lorsque le personnage arrête son maintien.",
+        "cout": 2,
+        "id": "art-du-combat-noble-danse-des-glyphes",
+        "condition": "Posséder le talent « Maîtrise du style magique de la Modulation ».",
+        "categories": [
+            "combat",
+            "defense",
+            "magie"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Grâce Voltigeante",
+        "effet": "Grâce à sa maîtrise corporelle, le personnage exécute ses manœuvres acrobatiques avec une fluidité remarquable. Une fois par tour, il peut réaliser une action ou une faculté acrobatique non offensive en dépensant 1 PR à la place de 1 PA. Les autres coûts restent inchangés.",
+        "cout": 2,
+        "id": "art-du-combat-noble-grace-voltigeante",
+        "condition": "Posséder les talents « Maîtrise de l'acrobatie » et « Maîtrise de l'agilité de mouvement ».",
+        "categories": [
+            "combat",
+            "exploration-competences"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Frontière du Lancier",
+        "effet": "Grâce à sa maîtrise de l'allonge et du positionnement, le personnage instaure un périmètre menaçant autour de lui. Une fois par tour, lorsqu'un adversaire entre volontairement dans la portée de son arme d'hast, il peut effectuer une attaque simple contre celui-ci sans consommer de PR, pour un coût de 8 PE. Si l'attaque touche, l'adversaire doit réussir un jet de résistance basé sur la CST ou être repoussé de 5 ft. Restriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-frontiere-du-lancier",
+        "condition": "Posséder la maîtrise d'une arme d'hast.",
+        "categories": [
+            "combat"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Prestance du Maître",
+        "effet": "La maîtrise des disciplines du combat noble permet au personnage d'adopter naturellement une posture défensive raffinée, même lorsqu'il n'exécute aucune technique particulière. Il bénéficie d'un bonus permanent de +10 à sa MD de base. Effet passif.",
+        "cout": 2,
+        "id": "art-du-combat-noble-prestance-du-maitre",
+        "condition": "Posséder au moins un autre talent appartenant aux Arts du Combat Noble.",
+        "categories": [
+            "combat",
+            "caracteristiques",
+            "defense"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Emprise du Serpent",
+        "effet": "Grâce à son contrôle précis du fouet, le personnage peut saisir un élément de son environnement ou une partie du corps d'un adversaire à portée de son arme. Une fois par tour, il peut effectuer une manœuvre de traction ou de déséquilibre sans consommer de PA, pour 5 PE. Contre un adversaire, cette manœuvre nécessite un jet de confrontation basé sur la DEX du personnage contre la FOR de la cible. En cas de victoire, il peut attirer la cible de 5 ft ou lui appliquer l'effet Déstabilisation. Restriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-emprise-du-serpent",
+        "condition": "Posséder la maîtrise du fouet.",
+        "categories": [
+            "combat"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Orbite des Lames",
+        "effet": "Grâce à sa maîtrise des trajectoires circulaires, le personnage peut modifier la trajectoire de son chakram après une attaque à distance.\nUne fois par tour, lorsque son attaque échoue, il peut rediriger son chakram vers une autre cible située à 10 ft maximum de la cible initiale, en effectuant un nouveau jet d'attaque. Cette manœuvre ne consomme aucun PA supplémentaire, mais coûte 6 PE.\nRestriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-orbite-des-lames",
+        "condition": "Posséder la maîtrise du chakram.",
+        "categories": [
+            "combat"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Fluidité du Roseau",
+        "effet": "Grâce à l'utilisation de son arme comme point d'appui, le personnage peut transformer ses mouvements défensifs en déplacements fluides.\nUne fois par tour, après une parade réussie avec son bâton, il peut immédiatement se déplacer de 10 ft dans une direction accessible, sans consommer son MOV ni provoquer d'attaque d'opportunité. Cette manœuvre coûte 5 PE.\nRestriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-fluidite-du-roseau",
+        "condition": "Posséder la maîtrise du bâton.",
+        "categories": [
+            "combat",
+            "defense"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Valse des Deux Tranchants",
+        "effet": "Grâce à ses mouvements circulaires et à la maîtrise des deux extrémités de son arme, le personnage transforme ses manœuvres défensives en ouvertures offensives. Lorsqu'il réussit une parade avec sa lame jumelle, il peut dépenser 5 PE pour appliquer l'effet Feinte à l'auteur de l'attaque. Restriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-valse-des-deux-tranchants",
+        "condition": "Posséder la maîtrise de la lame jumelle.",
+        "categories": [
+            "combat",
+            "defense"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Précision du Traqueur",
+        "effet": "Grâce à sa connaissance des points vulnérables et à sa précision, le personnage peut adapter ses tirs pour provoquer différentes blessures. Lorsqu'il réussit une attaque simple à l'arc (hors facultés), il peut dépenser 6 PE pour tenter d'appliquer l'un des effets suivants : Tir lacérant : la cible effectue un jet de Résilience (DD 10). En cas d'échec, elle subit 1 niveau de Saignement. Tir handicapant : la cible effectue un jet de Résilience (DD 10). En cas d'échec, elle subit Ralentissement 25 % jusqu'à la fin de son prochain tour. Les dégâts initiaux de l'attaque sont conservés. Restriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-precision-du-traqueur",
+        "condition": "Posséder la maîtrise de l'arc.",
+        "categories": [
+            "combat"
+        ]
+    },
+    {
+        "nom": "Art du Combat Noble : Mécanique du Chasseur",
+        "effet": "Lorsqu'un adversaire visible et à portée tente de lancer une faculté nécessitant une concentration, le personnage peut dépenser 1 PR et 6 PE pour effectuer une attaque simple à l'arbalète avant sa résolution. L'arbalète doit être chargée. Restriction : Un seul effet actif appartenant aux Arts du Combat Noble peut être activé par tour, tous talents de cette famille confondus.",
+        "cout": 2,
+        "id": "art-du-combat-noble-mecanique-du-chasseur",
+        "condition": "Posséder la maîtrise de l'arbalète.",
+        "categories": [
+            "combat"
+        ]
+    },
+    {
+        "nom": "Instinct du Bagarreur de tavernes",
+        "effet": "Grâce à sa débrouillardise et à sa capacité à exploiter son environnement, le personnage sait transformer les objets du quotidien en armes improvisées. Une fois par tour, il peut effectuer une attaque simple avec une arme improvisée en dépensant 1 PR et 5 PE à la place de 1 PA.",
+        "cout": 2,
+        "id": "instinct-du-bagarreur-de-tavernes",
+        "condition": null,
+        "categories": [
+            "combat"
+        ]
+    },
+    {
+        "nom": "Ingéniosité du Survivant",
+        "effet": "Grâce à son expérience des milieux hostiles, le personnage exploite plus efficacement les ressources naturelles à sa disposition. La DD de tous ses jets liés à la compétence Survivaliste est réduite de 2. Il sait également préparer et transformer les aliments potentiellement nocifs afin de faciliter leur consommation. La DD de ses jets de Résilience visant à résister aux effets néfastes de ces aliments est réduite de 2. Ce dernier bénéfice s'applique uniquement au personnage.",
+        "cout": 2,
+        "id": "ingeniosite-du-survivant",
+        "condition": "Posséder le talent « Survivaliste » au rang Avancé.",
+        "categories": [
+            "exploration-competences"
+        ]
     }
 ];
 
