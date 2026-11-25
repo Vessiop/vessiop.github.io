@@ -1,0 +1,216 @@
+.codex-fiche {
+    --race-accent: #226842;
+    --race-border: #cbb994;
+}
+
+.codex-fiche--elementaire {
+    --race-accent: #5e3e82;
+    --race-border: #c3afd0;
+}
+
+.codex-fiche a:not(.back-button) {
+    color: var(--race-accent);
+    text-underline-offset: 4px;
+}
+
+.codex-fiche a:focus-visible {
+    outline: 3px solid var(--race-accent);
+    outline-offset: 4px;
+}
+
+.codex-fiche .back-button {
+    border-color: var(--race-accent);
+    color: var(--race-accent);
+}
+
+.codex-fiche .back-button:hover {
+    background: var(--race-accent);
+    color: #fff;
+}
+
+.race-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(24px, 5vw, 72px);
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 90px 24px 36px;
+    position: relative;
+    z-index: 2;
+}
+
+.race-portrait {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 5;
+    background: var(--parchment-dark);
+    border: 2px solid var(--race-border);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.race-portrait span {
+    font-size: 4rem;
+}
+
+.race-portrait img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+}
+
+.race-kinds {
+    margin-bottom: 8px;
+    color: var(--race-accent);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.race-hero h1 {
+    color: var(--race-accent);
+    font: 900 clamp(2rem, 5vw, 4rem)/1.08 'Cinzel', serif;
+    overflow-wrap: anywhere;
+}
+
+.race-summary {
+    margin-top: 16px;
+    max-width: 60ch;
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    line-height: 1.5;
+}
+
+.race-edition {
+    margin-top: 12px;
+}
+
+.race-contents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-top: 24px;
+    font-weight: 600;
+}
+
+.race-fiche-body {
+    max-width: 1120px;
+    padding: 20px 24px 48px;
+    font-size: 1.125rem;
+}
+
+.race-fiche-body section[id] {
+    margin-bottom: 44px;
+    scroll-margin-top: 84px;
+}
+
+.race-fiche-body .section-title {
+    color: var(--race-accent);
+    border-color: var(--race-border);
+    font-size: clamp(1.3rem, 3vw, 1.85rem);
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+}
+
+.race-description,
+.race-gain {
+    padding: clamp(16px, 3vw, 28px);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--race-border);
+    border-radius: 8px;
+}
+
+.race-description {
+    max-width: 82ch;
+}
+
+.race-description p + p,
+.gain-text p + p {
+    margin-top: 0.65em;
+}
+
+.race-description h3,
+.race-gain h3 {
+    color: var(--race-accent);
+    font: 700 1.18rem/1.4 'Cinzel', serif;
+    margin-bottom: 0.45em;
+}
+
+.race-description h3:not(:first-child) {
+    margin-top: 1.25em;
+}
+
+.race-gains {
+    display: grid;
+    gap: 14px;
+}
+
+.race-gain--negative {
+    border-left: 4px solid var(--burgundy);
+}
+
+.race-gain--negative h3 {
+    color: var(--burgundy);
+}
+
+.gain-text {
+    max-width: 80ch;
+}
+
+.gain-text h4 {
+    font-size: inherit;
+    margin-top: 0.55em;
+}
+
+.gain-text ul {
+    padding-left: 1.3em;
+}
+
+.race-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    gap: 10px;
+}
+
+.race-stats div {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--race-border);
+    border-radius: 6px;
+}
+
+.race-stats dd {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+.race-stats .positive {
+    color: #226842;
+}
+
+.race-stats .negative {
+    color: var(--burgundy);
+}
+
+@media (max-width: 620px) {
+    .race-hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 72px 16px 26px;
+    }
+
+    .race-portrait {
+        width: min(100%, 200px);
+        grid-row: 2;
+    }
+
+    .race-fiche-body {
+        padding-inline: 16px;
+    }
+}
